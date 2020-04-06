@@ -1,0 +1,6 @@
+skipthis,project,issuetype,parent,summary,description,labels,assignee,estimate,versions,severity,milestone,storypoint,epic
+,MYP,Sub-task,,,,,#N/A,,,,,,
+,MYP,Sub-task,MYP-43,dummy task,,,yuhei.k@gmail.com,2.5,,,,,
+o,MYP,Sub-task,MYP-43,dummy task,,,yuhei.k@gmail.com,2.5,,,,,
+o,MYP,Sub-task,,,,,#N/A,,,,,,
+skip if not blank,MYP,Sub-task,MYP-43,dummy task,,,yuhei.k@gmail.com,1,,,,,
