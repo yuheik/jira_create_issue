@@ -112,6 +112,28 @@ module Jira
       @epic               = fields["customfield_10014"]
     end
 
+    def self.create_hash(params)
+      proc_hash = Proc.new { |h, k| h[k] = Hash.new &proc_hash; }
+      hash = Hash.new &proc_hash
+
+      hash[:fields][:project][:key]     = params[:project]         if params[:project]
+      hash[:fields][:issuetype][:name]  = params[:type]            if params[:type]
+      # hash[:fields][:parent][:key]      = params[:parent]          if params[:parent] # TODO parent depends on type. must check this.
+      hash[:fields][:summary]           = params[:title]           if params[:title]
+      hash[:fields][:description]       = params[:description]     if params[:description]
+      hash[:fields][:labels]            = params[:labels]          if params[:labels]
+      hash[:fields][:assignee][:id]     = params[:assignee]        if params[:assignee] # TODO account id is required
+      hash[:fields][:fixVersions]       = params[:versions]        if params[:versions]
+      hash[:fields][:components]        = params[:components]      if params[:components]
+      hash[:fields][:priority][:id]     = params[:priority]        if params[:priority]
+
+      # customfields
+      hash[:fields][:customfield_10024] = params[:storypoint].to_f if params[:storypoint]
+      hash[:fields][:customfield_10014] = params[:epic]            if params[:epic]
+
+      return hash
+    end
+
     def inspect
       "[#{@key}] #{@title} - #{@epic} (#{@story_points})"
     end

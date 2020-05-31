@@ -149,4 +149,14 @@ class JiraApiCaller < ApiCallerRestClient
                              :PUT,
                              payload)
   end
+
+  def self.create_issue(param_hash)
+    payload = JSON.pretty_generate(param_hash).to_s
+
+    ApiCallerRestClient.call("#{JIRA_URL}/issue",
+                             Credentials::UserName,
+                             Credentials::Password,
+                             :POST,
+                             payload)
+  end
 end
