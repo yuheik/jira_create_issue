@@ -1,0 +1,6 @@
+skipthis,project,type,parent,title,description,labels,assignee,estimate,versions,severity,milestone,storypoint,epic
+o,MYP,Sub-task,,,,,#N/A,,,,,,
+,MYP,Story,MYP-43,dummy story,dummy description,,5d01bc9814a1c50c5dd3d451,2.5,,,,30,MYP-115
+o,MYP,Sub-task,MYP-43,dummy task,,,Yuhei Kikuchi,2.5,,,,,
+o,MYP,Sub-task,,,,,#N/A,,,,,,
+skip if not blank,MYP,Sub-task,MYP-43,dummy task,,,Yuhei Kikuchi,1,,,,,
